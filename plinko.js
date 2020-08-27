@@ -11,7 +11,7 @@ class Plinko{
         push();
         var pos = this.body.position;
         translate(pos.x,pos.y);
-        fill(random(255),random(255),random(255));
+        fill("yellow");
         circle(0,0,this.diameter);
         pop();
     }

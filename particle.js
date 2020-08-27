@@ -1,7 +1,8 @@
 class Particle{
     constructor(x,y,diameter){
         var options = {
-            restitution: 0.4
+            isStatic: false,
+            restitution: 1,
         }
         this.body = Bodies.circle(x,y,diameter/2,options);
         this.diameter = diameter;
@@ -9,13 +10,12 @@ class Particle{
         World.add(world,this.body);
     }
     display(){
+        push();
         var pos = this.body.position;
         var angle = this.body.angle;
-
-        push();
-        translate(pos.x,pos.y);
+        translate(pos.x,pos.y); 
         rotate(angle);
-        fill("orange");
+        fill(this.color);
         circle(0,0,this.diameter);
         pop();
     }
